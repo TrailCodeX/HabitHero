@@ -20,18 +20,31 @@ A habit tracking web application to manage, track, and visualize your daily habi
    ```bash
    cd backend
 2. Create a virtual environment:
-
+   ```bash
     python -m venv venv
 
 3. Activate the virtual environment:
-
+   ```bash
      venv\Scripts\activate
 
 4. Install dependencies:
-
+   ```bash
     pip install -r requirements.txt
 
-
 5. Run the backend:
-
+   ```bash
     uvicorn app:app --reload
+
+### Frontend
+
+1. Navigate to the frontend folder:
+   ```bash
+   cd frontend
+
+2. Install dependencies:
+   ```bash
+   npm install
+
+3.Run the frontend:
+   ```bash
+   npm start
