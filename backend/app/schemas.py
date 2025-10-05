@@ -34,7 +34,7 @@ class Habit(HabitBase):
         orm_mode = True
 
 class HabitResponse(BaseModel):
-    id: int  # ✅ Include habit ID
+    id: int
     name: str
     category: str
     frequency: str
@@ -46,7 +46,7 @@ class HabitResponse(BaseModel):
 # ---------------- CheckIns ----------------
 class CheckInBase(BaseModel):
     habit_id: int
-    date: Optional[date] = None
+    date: Optional[date] = None          # <-- allow real dates
     note: Optional[str] = None
     completed: bool = True
     completed_at: Optional[datetime] = None
@@ -58,7 +58,6 @@ class CheckInCreate(BaseModel):
 
 class CheckIn(CheckInBase):
     id: int
-    habit_id: int
 
     class Config:
         orm_mode = True
@@ -70,8 +69,7 @@ class HabitStatus(BaseModel):
     category: str
     frequency: str
     target_day: Optional[str] = None
-    status: str  # "completed", "pending", "not_due"
+    status: str 
     streak: int
     last_completed: Optional[date] = None
     is_due_today: bool
-
